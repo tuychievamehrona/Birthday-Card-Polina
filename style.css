@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    background: #fdfdfd;
+    overflow: hidden;
+    perspective: 1000px;
+
+    font-family: "Caveat", cursive;
+}
+
+.dot__one,
+.dot__two,
+.dot__three,
+.dot__four,
+.dot__five {
+    width: 15px;
+    height: 30px;
+    position: absolute;
+    background-size: 100% 100%;
+}
+
+.dot__one {
+    background: url("img/confetti/1.png");
+}
+
+.dot__two {
+    background: url("img/confetti/2.png");
+}
+
+.dot__three {
+    background: url("img/confetti/3.png");
+}
+
+.dot__four {
+    background: url("img/confetti/4.png");
+}
+
+.dot__five {
+    background: url("img/confetti/5.png");
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#confetti {
+    width: 100%;
+    height: 100%;
+}
+
+.card {
+    width: fit-content;
+    height: auto;
+    padding: 15px 30px;
+
+    position: absolute;
+    top: 50%;
+    left: 54%;
+    z-index: 1;
+
+    transform-style: preserve-3d;
+    perspective: 200px;
+    opacity: 0;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+
+    transform: translate3d(-50%, -50%, 0) rotateY(30deg);
+    animation: card 2s linear 2s forwards;
+}
+
+.title {
+    width: max-content;
+    padding-right: 20px;
+    margin-bottom: 10px;
+
+    background-image: linear-gradient(110deg, #ff6945 0%, #8047ca 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    color: #ff6945;
+    font-size: calc(24px + 56 * (100vw / 1470));
+    line-height: 1;
+}
+
+.text {
+    margin-bottom: 20px;
+    padding-right: 20px;
+    padding-bottom: 5px;
+
+    background-image: linear-gradient(110deg, #333 0%, #ccc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    color: #333;
+    font-size: calc(21px + 14 * (100vw / 1470));
+    line-height: 1.2;
+    text-align: justify;
+}
+
+.author {
+    background-image: linear-gradient(110deg, #ff6945 0%, #0000ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    opacity: 0;
+
+    color: #121212;
+    font-size: calc(18px + 12 * (100vw / 1470));
+    text-align: right;
+
+    transition: opacity 1s linear;
+}
+
+@keyframes card {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 767px) {
+    .card {
+        padding: 7.5px 15px;
+    }
+
+    .title {
+        padding-right: 10px;
+
+        font-size: calc(24px + (56 + 56 * 0.7) * ((100vw - 280px) / 1470));
+    }
+
+    .text {
+        padding-right: 10px;
+        margin-bottom: 0;
+
+        font-size: calc(21px + (14 + 14 * 0.7) * ((100vw - 280px) / 1470));
+    }
+
+    .author {
+        font-size: calc(18px + (12 + 12 * 0.7) * ((100vw - 280px) / 1470));
+    }
+}
